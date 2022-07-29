@@ -13,6 +13,10 @@ class Category(MPTTModel):
         null=True,
         blank=True
     )
+
+    def __str__(self):
+        return self.name
+
     class MPTTMeta:
         order_insertion_by = ['name']
 
@@ -20,6 +24,9 @@ class Category(MPTTModel):
 class Tag(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Post(models.Model):
@@ -35,6 +42,9 @@ class Post(models.Model):
     )
     tags = models.ManyToManyField(Tag, related_name="post")
     create_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
 
 class Recipe(models.Model):
     name = models.CharField(max_length=100)
