@@ -18,7 +18,7 @@ class PostAdmin(admin.ModelAdmin):
 
 @admin.register(models.Recipe)
 class RecipeAdmin(admin.ModelAdmin):
-    list_display = ["name", "prep_time", "cooc_time", "post"]
+    list_display = ["name", "prep_time", "cook_time", "post"]
 
 
 admin.site.register(models.Category, MPTTModelAdmin)
