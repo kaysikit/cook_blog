@@ -21,7 +21,7 @@
                             <ul class="widget">
                                 <li>by {{ post.author }}</li>
                                 <li>3 min read</li>
-                                <li>20 Comment</li>
+                                <li>{{ post.get_comments.count }} Comment</li>
                             </ul>
                         </div>
                     </div>
